@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 import "./sign-in-form.styles.scss"
@@ -28,7 +27,7 @@ const handleChange = (event) => {
 const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const {user} = await signInAuthUserWithEmailAndPassword(email, password)
+            await signInAuthUserWithEmailAndPassword(email, password)
         } catch(err) {
             switch(err.code) {
                 case 'auth/wrong-password':
